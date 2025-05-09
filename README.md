@@ -9,8 +9,6 @@ This project is a Grocery Store Management Web App developed using the 3-tier ar
 * **Backend**: Developed with Python and Flask
 * **Database**: MySQL
 
-![Homepage](homepage.JPG)
-
 ---
 
 ## 📦 Getting Started
