@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Management - Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">🛒 Grocery Management</h1>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Dashboard</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>Dashboard</h2>
+      <p>Overview of your grocery management system</p>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">Loading dashboard data...</div>
+
+    <!-- Error State -->
+    <div id="error" class="error-message" style="display: none;"></div>
+
+    <!-- Dashboard Content -->
+    <div id="dashboard-content" style="display: none;">
+      <!-- Statistics Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-content">
+            <h3 id="total-products">0</h3>
+            <p>Total Products</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📋</div>
+          <div class="stat-content">
+            <h3 id="total-orders">0</h3>
+            <p>Total Orders</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-content">
+            <h3 id="total-revenue">₹0</h3>
+            <p>Total Revenue</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📏</div>
+          <div class="stat-content">
+            <h3 id="total-uoms">0</h3>
+            <p>Units of Measure</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Orders</h3>
+          <a href="orders.html" class="btn btn-primary">View All</a>
+        </div>
+        <div class="card-content">
+          <div id="recent-orders-table"></div>
+        </div>
+      </div>
+
+      <!-- Top Products -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Product Summary</h3>
+          <a href="products.html" class="btn btn-primary">Manage Products</a>
+        </div>
+        <div class="card-content">
+          <div id="products-summary-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

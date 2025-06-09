@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders - Grocery Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="nav-title">🛒 Grocery Management</h1>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="orders.html" class="nav-link active">Orders</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-header">
+      <h2>Order Management</h2>
+      <button id="create-order-btn" class="btn btn-primary">+ Create Order</button>
+    </div>
+
+    <!-- Loading/Error States -->
+    <div id="loading" class="loading">Loading orders...</div>
+    <div id="error" class="error-message" style="display: none;"></div>
+    <div id="success" class="success-message" style="display: none;"></div>
+
+    <!-- Orders Table -->
+    <div id="orders-section" class="card" style="display: none;">
+      <div class="card-header">
+        <h3>All Orders</h3>
+        <div class="search-box">
+          <input type="text" id="search-orders" placeholder="Search by customer name...">
+        </div>
+      </div>
+      <div class="card-content">
+        <div id="orders-table"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Order Modal -->
+  <div id="order-modal" class="modal">
+    <div class="modal-content large">
+      <div class="modal-header">
+        <h3>Create New Order</h3>
+        <span class="close">&times;</span>
+      </div>
+      <form id="order-form">
+        <div class="form-group">
+          <label for="customer-name">Customer Name *</label>
+          <input type="text" id="customer-name" required>
+        </div>
+
+        <div class="form-section">
+          <div class="section-header">
+            <h4>Order Items</h4>
+            <button type="button" id="add-item-btn" class="btn btn-secondary">+ Add Item</button>
+          </div>
+          <div id="order-items">
+            <!-- Order items will be added dynamically -->
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div class="summary-row">
+            <span>Total Amount:</span>
+            <span id="order-total">₹0.00</span>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-order-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-order-btn">Create Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Details Modal -->
+  <div id="order-details-modal" class="modal">
+    <div class="modal-content large">
+      <div class="modal-header">
+        <h3>Order Details</h3>
+        <span class="close">&times;</span>
+      </div>
+      <div id="order-details-content">
+        <!-- Order details will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+
+</html>
